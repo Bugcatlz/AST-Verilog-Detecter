@@ -53,7 +53,7 @@ Unlike services like **MOSS**, which upload code to external servers, this tool 
 
 Place `main.py`, `VerilogLexer.py`, and `VerilogParser.py` in the same directory. Then, run the script:
 
-```bash
+```
 python main.py \
     --target_file <target Verilog file name> \
     --student_dir <directory containing student submissions> \
@@ -89,7 +89,7 @@ Assume your project structure is as follows:
 #### Example 1: **Pairwise Comparison with Template Exclusion**
 
 If `lab1.v` is the target file for comparison, and a `template.v` is provided to exclude shared code:
-```bash
+```
 python main.py \
     --target_file lab1.v \
     --student_dir ./submissions \
