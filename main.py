@@ -49,14 +49,17 @@ def remove_comments(file_path, templete_file_path):
         try:
             with open(file_path, "r", encoding="utf-8", errors="ignore") as file:
                 lines = file.readlines()
-            with open(templete_file_path, "r", encoding="utf-8", errors="ignore") as file:
-                templet_lines = file.readlines()
+            if templete_file_path is not None:
+                with open(templete_file_path, "r", encoding="utf-8", errors="ignore") as file:
+                    templete_lines = file.readlines()
+            else:
+                templete_lines = []
             cleaned_lines = []
             inside_block_comment = False
             inside_preprocessor_block = False
 
             for line in lines:
-                if line in templet_lines:
+                if line in templete_lines:
                     continue
                 if inside_block_comment:
                     if '*/' in line:
